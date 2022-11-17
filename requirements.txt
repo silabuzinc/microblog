@@ -1,0 +1,9 @@
+Flask
+flask-login
+Flask-Migrate
+flask-wtf
+python-dotenv
+Flask-Bootstrap
+flask-sqlalchemy
+mysqlclient
+werkzeug
