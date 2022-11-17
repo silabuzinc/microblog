@@ -61,7 +61,7 @@ export FLASK_DEBUG=1
 window
 
 ```bash
-set FLASK_APP=app.py
+set FLASK_APP=main.py
 set FLASK_DEBUG=1
 ```
 
@@ -107,10 +107,14 @@ flask db upgrade
 
 # SQLALCHEMY_DATABASE_URI
 
+Algunas formas de `SQLALCHEMY_DATABASE_URI`:
+
 ```
 SQLALCHEMY_DATABASE_URI = "mysql://root:password@localhost/database"
 SQLALCHEMY_DATABASE_URI = "mysql://root:password@127.0.0.1:33060/database"
 ```
+
+Para el caso de docker no siempre `localhost` funciona por ello se utiliza `127.0.0.1`, y recordemos `33060` sería el puerto del host.
 
 # Referencias
 
