@@ -29,13 +29,13 @@ Virtualenv una herramienta para crear entornos virtuales de Python. Esto es úti
 pip install virtualenv
 ```
 
-### Crear una maquina virtual
+### Crear una máquina virtual
 
 ```bash
 virtualenv venv --python=python3.10
 ```
 
-### Activar la maquina virtual
+### Activar la máquina virtual
 
 ```bash
 source venv/bin/activate
@@ -54,7 +54,7 @@ venv/Scripts/activate.ps1
 Unix
 
 ```bash
-export FLASK_APP=app.py
+export FLASK_APP=main.py
 export FLASK_DEBUG=1
 ```
 
@@ -87,11 +87,9 @@ pip install -r requirements.txt
 
 # Para la base de datos
 
-# Aplicando migraciones en la base de datos
+## Migraciones en la base de datos
 
-Acorde a la documentación de [Flask Migrate](https://flask-migrate.readthedocs.io/en/latest/)
-
-Y debido a que usamos `create_all`:
+No serán necesarias las migraciones ya que estamos usando `create_all`:
 
 ```python
 db.init_app(app)
@@ -99,10 +97,12 @@ with app.app_context():
     db.create_all()
 ```
 
-Solo necesitaríamos:
+En otros escenarios se requeriría:
 
 ```bash
 flask db init
+flask db migrate -m "Initial migration."
+flask db upgrade
 ```
 
 # SQLALCHEMY_DATABASE_URI
